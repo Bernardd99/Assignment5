@@ -1,24 +1,45 @@
+<h5>Three Most Populated Countries</h5>
 <div class="row justify-content-md-center">
-
-    <h5>Three Most Populated Countries</h5>
-    <div class="col col-sm-3" *ngFor="let country of countriesPopulation | slice:0:3;">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">{{country.name}}</h5>
-                <p>{{country.population}} people</p>
-            </div>
+    <div class="col col-sm-2" *ngFor="let country of countriesPopulation | slice:0:3;">
+        <div class="card mb-3" style="background-color: sienna; color: white; font-size: small;">
+            <button class="btn btn-sm" style="background-color: sienna; color: white;">
+                <div [routerLink]="['/countryDetail/', country.countryId]" class="card-body">
+                    <h6 class="card-title">{{country.name}}</h6>
+                    <p>{{country.population}} people</p>
+                </div>
+            </button>
         </div>
     </div>
+</div>
 
-    <div style="margin: 25px"></div>
+<div style="margin: 25px"></div>
 
-    <h5>Three Largest Countries (Area)</h5>
-    <div class="col col-sm-3" *ngFor="let country of countriesArea | slice:0:3;">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">{{country.name}}</h5>
-                <p>{{country.area}} km²</p>
-            </div>
+<h5>Three Largest Countries (Area)</h5>
+<div class="row justify-content-md-center">
+    <div class="col col-sm-2" *ngFor="let country of countriesArea | slice:0:3; ">
+        <div class="card mb-3" style="background-color: sienna; color: white; font-size: small;">
+            <button class="btn btn-sm" style="background-color: sienna; color: white;">
+                <div [routerLink]="['/countryDetail/', country.countryId]" class="card-body">
+                    <h6 class="card-title">{{country.name}}</h6>
+                    <p>{{country.area}} km²</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div style="margin: 25px"></div>
+
+<h5>Three Countries with Highest GDP</h5>
+<div class="row justify-content-md-center">
+    <div class="col col-sm-2" *ngFor="let country of countriesGDP | slice:0:3; ">
+        <div class="card mb-3" style="background-color: sienna; color: white; font-size: small;">
+            <button class="btn btn-sm" style="background-color: sienna; color: white;">
+                <div [routerLink]="['/countryDetail/', country.countryId]" class="card-body">
+                    <h6 class="card-title">{{country.name}}</h6>
+                    <p>{{country.gdp}}</p>
+                </div>
+            </button>
         </div>
     </div>
 </div>

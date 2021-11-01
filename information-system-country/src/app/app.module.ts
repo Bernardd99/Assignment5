@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from '../models/country';
 import { CountryService } from '../country.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-country-detail',
@@ -13,14 +14,14 @@ export class CountryDetailComponent implements OnInit {
   country: Country = {} as Country;
   countryService: CountryService;
 
-  constructor(private actRoute: ActivatedRoute, countryService: CountryService) {
+  constructor(private actRoute: ActivatedRoute, countryService: CountryService,private location : Location) {
     this.countryId = this.actRoute.snapshot.params.countryId;
     this.countryService = countryService;
   }
 
   ngOnInit(): void {
     this.getCountry(this.countryId);
-    this.country.population = this.numberWithCommas(this.country.population) 
+    // this.country.population = this.numberWithCommas(this.country.population)
   }
 
   getCountry(countryId: number){
@@ -29,5 +30,9 @@ export class CountryDetailComponent implements OnInit {
 
   numberWithCommas(s: string) {
     return s.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  goBack(){
+    this.location.back();
   }
 }

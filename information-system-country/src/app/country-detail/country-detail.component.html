@@ -1,16 +1,31 @@
-<div>
-    <div class="col-sm-4">
-        <div class="card mb-3">
-            <div class="card-body">
+<div class="row justify-content-md-center">
+    <div class="col-sm-3">
+        <div class="card mb-4" style="border-color: white;">
+            <div class="card-body" >
                 <h5 class="card-title">{{country.name}}</h5>
-                <p class="card-text">Capital: {{country.capital}}</p>
-                <p class="card-text">Area: {{country.area}}</p>
-                <p class="card-text">Population: {{country.population}}</p>
-                <p class="card-text">GDP: {{country.gdp}}</p>
-                <p class="card-text">Currency: {{country.currency}}</p>
-                <a routerLink="/allCountries">
-                    <button class="btn btn-danger">Go Back</button>
-                </a>
+                <div class="d-flex justify-content-between">
+                    <p style="color: green;">Capital:</p>
+                    <p>{{country.capital}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p style="color: green;">Area:</p>
+                    <p>{{country.area}}</p>
+                </div>
+                <div class="card-text d-flex justify-content-between">
+                    <p style="color: green;">Population:</p>
+                    <p>{{country.population}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p style="color: green;">GDP:</p>
+                    <p>{{country.gdp}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p style="color: green;">Currency:</p>
+                    <p>{{country.currency}}</p>
+                </div>
+                <!-- <a routerLink="/allCountries"> -->
+                <button class="btn btn-danger" style="float: left;" (click)="goBack()">Go Back</button>
+                <!-- </a> -->
             </div>
         </div>
     </div>
