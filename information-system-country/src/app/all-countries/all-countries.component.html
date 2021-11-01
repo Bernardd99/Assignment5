@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-4" *ngFor="let country of countries">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{country.name}}</h5>
+                <p class="card-text">{{country.capital}}</p>
+                <a [routerLink]="['/countryDetail/', country.countryId]" class="btn btn-success">
+                    Country Detail
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row justify-content-md-center">
+
+    <h5>Three Most Populated Countries</h5>
+    <div class="col col-sm-3" *ngFor="let country of countriesPopulation | slice:0:3;">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{country.name}}</h5>
+                <p>{{country.population}} people</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin: 25px"></div>
+
+    <h5>Three Largest Countries (Area)</h5>
+    <div class="col col-sm-3" *ngFor="let country of countriesArea | slice:0:3;">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{country.name}}</h5>
+                <p>{{country.area}} km²</p>
+            </div>
+        </div>
+    </div>
+</div>
