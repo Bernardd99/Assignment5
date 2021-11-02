@@ -21,7 +21,7 @@ export class CountryDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountry(this.countryId);
-    // this.country.population = this.numberWithCommas(this.country.population)
+    this.country.population = this.numberWithCommas(this.country.population)
   }
 
   getCountry(countryId: number){

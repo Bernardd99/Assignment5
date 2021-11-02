@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
     this.getCountriesArea();
     this.getCountriesGDP();
 
-    this.countriesPopulation = this.countriesPopulation.map(x => Object.assign({}, x));
-    this.countriesArea = this.countriesArea.map(x => Object.assign({}, x));
-    this.countriesGDP = this.countriesGDP.map(x => Object.assign({}, x));
+    this.countriesPopulation = this.countriesPopulation.map(a => Object.assign({}, a));
+    this.countriesArea = this.countriesArea.map(a => Object.assign({}, a));
+    this.countriesGDP = this.countriesGDP.map(a => Object.assign({}, a));
 
 
     this.countriesPopulation.sort((a, b) =>
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
   }
 
   addComma() {
-    for (let i = 0; i < this.countriesPopulation.length; i++) {
+    for (let i = 0; i < this.countries.length; i++) {
       this.countriesPopulation[i].population = this.numberWithCommas(this.countriesPopulation[i].population)
       this.countriesArea[i].area = this.numberWithCommas(this.countriesArea[i].area)
       this.countriesGDP[i].gdp = this.numberWithCommas(this.countriesGDP[i].gdp)
